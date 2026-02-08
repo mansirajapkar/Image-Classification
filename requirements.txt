@@ -2,8 +2,4 @@ streamlit
 tensorflow==2.13.0
 numpy
 pillow
-<<<<<<< HEAD
 gdown
-=======
-gdown
->>>>>>> 6f6156eade78f95a1f09be0fd8cf35be2d85150a
