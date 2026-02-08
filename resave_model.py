@@ -1,8 +1,12 @@
 import tensorflow as tf
 
-# Load your old model (the one that works locally)
-old_model = tf.keras.models.load_model("flower_model.keras", compile=False)
+# Load your OLD model (path to existing model)
+old_model_path = "flower_model.keras"
 
-# Re-save in a fully compatible format
-old_model.save("flower_model_2.keras", save_format="keras")
-print("✅ Model re-saved successfully!")
+model = tf.keras.models.load_model(old_model_path, compile=False)
+
+# Save again in safe format
+model.save("model.h5")
+
+print("✅ Model saved successfully as model.h5")
+

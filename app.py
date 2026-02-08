@@ -18,8 +18,8 @@ st.title("🌸 Flower Image Classification")
 st.write("Upload a flower image and the model will predict its category.")
 
 #Download Model From Google Drive
-MODEL_PATH="flower_model.keras"
-file_id="1nzhaqBbM6kydWvcUclpPcgjdvza_NCjp"
+MODEL_PATH="oxford_flower_model.h5"
+file_id="1Tc2A6tQQar6aEosJqQP1sjz-IWS7_k2v"
 
 if not os.path.exists(MODEL_PATH):
     with st.spinner("Downloading Trained Model....Please Wait"):
