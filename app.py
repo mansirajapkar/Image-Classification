@@ -18,8 +18,8 @@ st.title("🌸 Flower Image Classification")
 st.write("Upload a flower image and the model will predict its category.")
 
 #Download Model From Google Drive
-MODEL_PATH="flower_model.keras"
-file_id="1nzhaqBbM6kydWvcUclpPcgjdvza_NCjp"
+MODEL_PATH="flower_model_2.keras"
+file_id="1J77aLWVYDbPgGmSgbiZieMC6SyG9iJHK"
 
 if not os.path.exists(MODEL_PATH):
     with st.spinner("Downloading Trained Model....Please Wait"):
@@ -34,7 +34,7 @@ if not os.path.exists(MODEL_PATH):
 
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model(MODEL_PATH)
+    model = tf.keras.models.load_model(MODEL_PATH,compile=False)
     return model
 
 model = load_model()
@@ -50,7 +50,7 @@ def preprocess_image(image):
     img_width = 180
 
     image = image.resize((img_width, img_height))
-    img_array = tf.keras.utils.img_to_array(image)
+    img_array = tf.keras.utils.img_to_array(image)/255.0
     img_array = tf.expand_dims(img_array, 0)  # Create batch
     return img_array
 
