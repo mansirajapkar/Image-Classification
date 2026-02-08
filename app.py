@@ -25,7 +25,7 @@ if not os.path.exists(MODEL_PATH):
     with st.spinner("Downloading Trained Model....Please Wait"):
         url=f"https://drive.google.com/uc?id={file_id}"
         gdown.download(
-            url,MODEL_PATH,quiet=False
+            url,MODEL_PATH,quiet=True
         )
 
 # ----------------------------
@@ -34,7 +34,7 @@ if not os.path.exists(MODEL_PATH):
 
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model("flower_model.keras")
+    model = tf.keras.models.load_model(MODEL_PATH)
     return model
 
 model = load_model()
@@ -62,7 +62,7 @@ with st.form("prediction_form"):
         "📤 Upload Flower Image",
         type=["jpg", "jpeg", "png"]
     )
-    submit = st.form_submit_button("🔍 Predict")
+    submit = st.form_submit_button("🔍 Predict", disabled=uploaded_file is None)
 
 # ----------------------------
 # Prediction
