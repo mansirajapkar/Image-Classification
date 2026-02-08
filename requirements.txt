@@ -1,14 +1,5 @@
-<<<<<<< HEAD
 streamlit
 tensorflow==2.13.0
 numpy
 pillow
-opencv-python
-=======
-streamlit
-tensorflow==2.13.0
-numpy
-pillow
-opencv-python
->>>>>>> 251a697028d581ff300836ec3454a9b4bd936974
 gdown
